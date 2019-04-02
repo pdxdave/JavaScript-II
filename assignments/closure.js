@@ -1,5 +1,15 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function state() {
+  console.log("I live in the state of Oregon");
+  const message = "I live in Portland";
+ 
+ function city() {
+     console.log(`${message}, the City of Roses`);
+ }
+ city();
+}
+state();
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
