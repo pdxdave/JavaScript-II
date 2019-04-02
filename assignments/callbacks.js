@@ -2,6 +2,9 @@
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
+function funky (x){
+  console.log(x);
+}
 /* 
 
   //Given this problem: 
@@ -75,10 +78,12 @@ multiplyNums(2, 4, (multNums) => {
 
 
 
-function contains(item, list, cb) {
+function contains(item, list, funky) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  funky(list.includes(item));
 }
+contains('Pencil', items, funky);
 
 /* STRETCH PROBLEM */
 
