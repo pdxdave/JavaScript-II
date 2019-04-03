@@ -2,6 +2,9 @@
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
+function funky (x){
+  console.log(x);
+}
 /* 
 
   //Given this problem: 
@@ -27,29 +30,74 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  cb(arr.length)
 }
+
+getLength(items, (lengthCount) => {
+    console.log("the length count is " + lengthCount);
+})
+
+
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  for(var i = 0; i < arr.length; i++){
+    if(arr[i] === arr[arr.length -1]){
+      cb(arr[i]);
+    }
+  } 
 }
+
+last(items, (lastItem) => {
+  console.log("the last item is " + lastItem);
+})
+
+
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  cb(x + y);
 }
+
+sumNums(1, 2, (nums) => {
+   console.log("the sum of two numbers is " + nums);
+})
+
+
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  cb( x * y);
 }
 
-function contains(item, list, cb) {
+multiplyNums(2, 4, (multNums) => {
+   console.log("multiplying two numbers is " + multNums);
+})
+
+
+
+
+
+function contains(item, list, funky) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  funky(list.includes(item));
 }
+contains('Pencil', items, funky);
 
 /* STRETCH PROBLEM */
+
+
+let arr = [2,3,5,6,2,2,2,4,3,7,2,4];
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+
+ cb(test = [...new Set(array)].sort());
 }
+
+removeDuplicates(arr, (newArr) => {
+   console.log(newArr);
+})
